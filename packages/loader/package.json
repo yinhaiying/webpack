@@ -17,6 +17,7 @@
     "registry": "http://registry.npm.taobao.org/"
   },
   "scripts": {
-    "css_build": "node -r ts-node/register index.ts"
+    "css_build": "node -r ts-node/register bundle_css.ts",
+    "css_loader_build": "node -r ts-node/register bundle_css_loader.ts"
   }
 }
