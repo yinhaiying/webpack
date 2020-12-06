@@ -17,6 +17,6 @@
     "registry": "http://registry.npm.taobao.org/"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "css_build": "node -r ts-node/register index.ts"
   }
 }
