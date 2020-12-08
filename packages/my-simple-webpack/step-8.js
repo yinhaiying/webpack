@@ -7,7 +7,7 @@
 
 const fs = require("fs");
 const path = require("path");
-
+const process = require("./loaders/css")
 
 // 获取依赖
 function getDependencies(str) {
@@ -25,6 +25,11 @@ let ID = 0;
 function createAsset(filename) {
     // readFileSync  读取文件  最好传递绝对路径
   let fileContent = fs.readFileSync(filename, "utf-8");
+  if (/\.css$/.test(filename)) {
+    console.log("说明是css文件")
+    fileContent = process(fileContent)
+  }
+  console.log("filename:", filename)
   const id = ID++;
   return {
     id: id,
@@ -54,21 +59,7 @@ function createGraph(filename){
     return queue;
 }
 
-// let result = createGraph("./index.js");
-// console.log("result:",result)
 
-
-// 打包成最终形式:包含所有模块信息的模块对象和模块执行函数
-/* 
- 0:[
-     function(require,exports,module){let familyName = require("./family-name.js").name;exports.name = `${familyName} Rou`;},
-     {"./action.js":1,"./name.js":2}
- ],
- 1:[],
-
-
-
-*/
 function createBundle(graph){
   let modules = "";
   graph.forEach((mod) => {
@@ -93,7 +84,7 @@ function createBundle(graph){
     exec(0);
   })({${modules}})`;
 
-  fs.writeFileSync("../dist/bundle.js",result);
+  fs.writeFileSync("./bundle.js", result);
 }
 
 let graph = createGraph("./index.js");
