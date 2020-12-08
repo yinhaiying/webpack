@@ -1,1 +1,1 @@
-export const name = "海英";
+export const name = "小明";

@@ -11,15 +11,6 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //     test: /\.js$/,
-            //     use: {
-            //         loader: "./src/loaders/replace-loader.js",
-            //         options: {
-            //             params: "哈哈哈哈，这是一个用于替换的loader"
-            //         }
-            //     }
-            // }, 
             {
                 test: /\.js$/,
                 use: ["replace-name-loader", "replace-age-loader"]
