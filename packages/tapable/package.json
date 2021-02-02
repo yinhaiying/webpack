@@ -1,0 +1,11 @@
+{
+  "name": "tapable",
+  "version": "1.0.0",
+  "description": "webpack中tapable的学习",
+  "main": "index.js",
+  "author": "haiyingsitan",
+  "license": "MIT",
+  "dependencies": {
+    "tapable": "^2.2.0"
+  }
+}
