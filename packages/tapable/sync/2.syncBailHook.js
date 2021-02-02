@@ -18,11 +18,14 @@ class Lesson {
     }
     tap() {
         this.hooks.arch.tap("js", (name) => {
-            console.log("js课程");
-            return "非undefined就停止后面的钩子运行";            // 返回非undefined的值，下面的钩子就都不执行了。
+            console.log(`${name}在学习js课程`);
         });
         this.hooks.arch.tap("css", (name) => {
-            console.log("css课程");
+            console.log(`${name}在学习css课程`);
+            return "非undefined就停止后面的钩子运行";            // 返回非undefined的值，下面的钩子就都不执行了。
+        });
+        this.hooks.arch.tap("html", (name) => {
+            console.log(`${name}在学习html课程`);
         });
     }
     start() {

@@ -20,10 +20,10 @@ class Lesson {
     tap() {
         this.hooks.arch.tap("js", (name) => {
             console.log("js课程");
-            return "js学得不错";
+            return "js课程";
         });
         this.hooks.arch.tap("node", (data) => {
-            console.log(data)   // 拿到上一个钩子的返回值,作为参数
+            console.log(`上一个钩子返回：${data}`);   // 拿到上一个钩子的返回值,作为参数
             console.log("node课程");
         });
     }

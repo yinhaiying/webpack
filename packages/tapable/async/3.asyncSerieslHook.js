@@ -18,13 +18,13 @@ class Lesson {
     tap() {
         this.hooks.arch.tapAsync("js", (name, callback) => {
             setTimeout(() => {
-                console.log("js课程");
+                console.log("5000ms后执行js课程");
                 callback();
-            }, 5000)
+            }, 2000)
         });
         this.hooks.arch.tapAsync("css", (name, callback) => {
             setTimeout(() => {
-                console.log("css课程");
+                console.log("1000ms后执行css课程");
                 callback();
             }, 1000)
         });

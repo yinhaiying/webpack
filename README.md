@@ -10,8 +10,9 @@
 ├─loader  ---------------------- webpack中loader相关的内容
 │  ├─dist
 │  ├─loaders   ----------------- 对css的处理放在bundle_css.ts
-│  └─project_css --------------- 对css的处理放在抽离出来的函数中——这就是loader
+│  └─project_css    ------------ 对css的处理放在抽离出来的函数中——这就是loader
 ├─my-simple-webpack ------------- 我的自定义简易webpack
+└─tapable           -------------        webpack的tapable事件机制
 └─simple-webpack    ------------- 网上的简易自定义webpack
     └─project1
 ```

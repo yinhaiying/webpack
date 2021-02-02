@@ -27,7 +27,7 @@ class Lesson {
             setTimeout(() => {
                 console.log("上一个钩子的返回结果：",data)
                 console.log("css课程");
-                callback("error","css课程");
+                callback(null,"css课程");
             }, 1000)
         });
         this.hooks.arch.tapAsync("node", (data, callback) => {

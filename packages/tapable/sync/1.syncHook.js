@@ -1,5 +1,4 @@
 let {SyncHook} = require("tapable");
-
 class Lesson{
     constructor(){
         this.hooks = {
@@ -7,12 +6,11 @@ class Lesson{
         }
     }
     tap(){
-        console.log(Object.keys(this.hooks.arch));
         this.hooks.arch.tap("js",(name) => {
-          console.log("js课程");
+          console.log(`${name}注册了js事件`);
         });
         this.hooks.arch.tap("css",(name) => {
-          console.log("css课程");
+          console.log(`${name}注册了css事件`);
         });
     }
     start(){
